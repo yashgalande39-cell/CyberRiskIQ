@@ -1,0 +1,12 @@
+CyberRiskIQ reference recreation
+
+The laptop, glass layers, connected Earth, doorway, and portraits are custom AI-generated visual recreations, not the original image files from the supplied screenshot.
+
+Brand artwork sources:
+Infosys: https://cdn.jsdelivr.net/npm/simple-icons@11/icons/infosys.svg (Simple Icons, CC0)
+Tata: https://commons.wikimedia.org/wiki/File:Tata_logo.svg
+Amazon: https://commons.wikimedia.org/wiki/File:Amazon_logo.svg
+Microsoft: https://commons.wikimedia.org/wiki/File:Microsoft_logo_(2012).svg
+Other wordmarks and marks are SVG recreations of the reference.
+
+All third-party trademarks belong to their respective owners. Their appearance reproduces the user-provided reference and does not imply a verified endorsement or customer relationship.

@@ -1,0 +1,100 @@
+/* Scoped Styles for Recommendations Page - CyberRiskIQ */
+
+.recommendations-page {
+  position: relative;
+  width: 100%;
+  color: var(--sc-text-main, #e8f4fc);
+  font-family: inherit;
+  font-size: 13px;
+  background: transparent;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.recommendations-page .rounded-xl {
+  background: linear-gradient(120deg, #00121c 0%, #001520 100%) !important;
+  border: 1px solid var(--sc-border, #06314a) !important;
+  border-radius: 5px !important;
+}
+
+.recommendations-page .bg-\[\#0b1426\] {
+  background: linear-gradient(120deg, #00121c 0%, #001520 100%) !important;
+  border-color: var(--sc-border, #06314a) !important;
+}
+
+.recommendations-page *,
+.recommendations-modal-backdrop * {
+  box-sizing: border-box;
+}
+
+/* Scrollbars */
+.recommendations-page::-webkit-scrollbar,
+.recommendations-modal::-webkit-scrollbar,
+.recommendations-page .rec-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.recommendations-page::-webkit-scrollbar-track,
+.recommendations-modal::-webkit-scrollbar-track,
+.recommendations-page .rec-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.recommendations-page::-webkit-scrollbar-thumb,
+.recommendations-modal::-webkit-scrollbar-thumb,
+.recommendations-page .rec-scroll::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 6px;
+}
+
+.recommendations-page::-webkit-scrollbar-thumb:hover,
+.recommendations-modal::-webkit-scrollbar-thumb:hover,
+.recommendations-page .rec-scroll::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Modals */
+.recommendations-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 16px;
+  animation: recFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.recommendations-modal {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #0b1426;
+  border: 1px solid #1c2c4d;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(37, 99, 235, 0.15);
+  color: #fff;
+  padding: 24px;
+  animation: recSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes recFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes recSlideUp {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}

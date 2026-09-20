@@ -1,0 +1,442 @@
+/* Reports & Analytics Stylesheet - CyberRiskIQ */
+
+.report-analysis-page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  color: var(--sc-text-main, #e8f4fc);
+  font-family: inherit;
+  font-size: 13px;
+  background: transparent;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.report-analysis-page *,
+.report-modal-backdrop * {
+  box-sizing: border-box;
+}
+
+/* ================= Main Scrollable Content ================= */
+
+.report-analysis-page .report-main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.report-card {
+  background: linear-gradient(120deg, #00121c 0%, #001520 100%) !important;
+  border: 1px solid var(--sc-border, #06314a) !important;
+  border-radius: 5px !important;
+}
+
+.report-kpi-card {
+  background: linear-gradient(125deg, #001723, #00101b 86%) !important;
+  border: 1px solid var(--sc-border, #06314a) !important;
+  border-radius: 5px !important;
+}
+
+/* ================= Header Banner ================= */
+
+.report-analysis-page .report-header-banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #070b14;
+}
+
+.report-analysis-page .report-banner-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.report-analysis-page .report-banner-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #070b14 0%, rgba(7, 11, 20, 0.88) 45%, rgba(7, 11, 20, 0.3) 100%);
+  pointer-events: none;
+}
+
+.report-analysis-page .report-banner-inner {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+}
+
+.report-analysis-page .report-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.report-analysis-page .report-breadcrumbs button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.report-analysis-page .report-breadcrumbs button:hover {
+  color: #ffffff;
+}
+
+.report-analysis-page .report-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 4px 0 0;
+  letter-spacing: -0.02em;
+}
+
+.report-analysis-page .report-subtitle {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin: 4px 0 0;
+  line-height: 1.4;
+}
+
+.report-analysis-page .report-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.report-analysis-page .report-motto {
+  display: none;
+  text-align: right;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+
+@media (min-width: 1100px) {
+  .report-analysis-page .report-motto {
+    display: block;
+  }
+}
+
+.report-analysis-page .report-date-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  background-color: rgba(11, 18, 32, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.18s;
+}
+
+.report-analysis-page .report-date-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.report-analysis-page .report-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 16px;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.18s;
+}
+
+.report-analysis-page .report-btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+/* ================= Tabs Navigation ================= */
+
+.report-analysis-page .report-tabs-pill-bar {
+  display: inline-flex;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #0b1220;
+  padding: 4px;
+  width: fit-content;
+}
+
+.report-analysis-page .report-tab-pill {
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.report-analysis-page .report-tab-pill:hover {
+  color: #ffffff;
+}
+
+.report-analysis-page .report-tab-pill.is-active {
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 0 #3b82f6;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* ================= Cards ================= */
+
+.report-analysis-page .report-card {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #0b1220;
+}
+
+/* ================= 5 KPI Cards Grid ================= */
+
+.report-analysis-page .report-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 1024px) {
+  .report-analysis-page .report-kpi-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.report-analysis-page .report-kpi-card {
+  padding: 14px;
+}
+
+.report-analysis-page .report-kpi-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.report-analysis-page .report-kpi-icon-wrap {
+  display: flex;
+  height: 28px;
+  width: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.report-analysis-page .report-kpi-title {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.25;
+}
+
+.report-analysis-page .report-kpi-val {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 8px;
+  line-height: 1;
+}
+
+.report-analysis-page .report-kpi-sub {
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+/* ================= 3 Charts Row ================= */
+
+.report-analysis-page .report-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .report-analysis-page .report-charts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.report-analysis-page .report-chart-card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-analysis-page .report-card-heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.report-analysis-page .report-card-subheading {
+  font-size: 11px;
+  color: #94a3b8;
+  margin: 2px 0 0;
+}
+
+/* ================= 2 Table / Compliance Row ================= */
+
+.report-analysis-page .report-two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .report-analysis-page .report-two-col-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.report-analysis-page .report-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.report-analysis-page .report-data-table {
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.report-analysis-page .report-data-table th {
+  padding: 8px 6px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #94a3b8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.report-analysis-page .report-data-table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.report-analysis-page .report-data-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ================= Right Docked Sidebar / Generator Panel ================= */
+
+.report-analysis-page .report-right-panel {
+  display: none;
+  width: 290px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #070b14;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1240px) {
+  .report-analysis-page .report-right-panel {
+    display: block;
+  }
+}
+
+.report-analysis-page .report-toggle-switch {
+  position: relative;
+  height: 20px;
+  width: 36px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.18s;
+}
+
+.report-analysis-page .report-toggle-switch.is-on {
+  background-color: #2563eb;
+}
+
+.report-analysis-page .report-toggle-switch.is-off {
+  background-color: #334155;
+}
+
+.report-analysis-page .report-toggle-knob {
+  position: absolute;
+  top: 2px;
+  height: 16px;
+  width: 16px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  transition: left 0.18s;
+}
+
+.report-analysis-page .report-toggle-switch.is-on .report-toggle-knob {
+  left: 18px;
+}
+
+.report-analysis-page .report-toggle-switch.is-off .report-toggle-knob {
+  left: 2px;
+}
+
+/* ================= Modal Backdrop ================= */
+
+.report-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(5, 7, 12, 0.82);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: reportFadeIn 0.18s ease-out;
+}
+
+@keyframes reportFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.report-modal-dialog {
+  background: #0b1220;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 480px;
+  color: #f8fafc;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}

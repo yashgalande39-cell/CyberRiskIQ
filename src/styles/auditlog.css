@@ -1,0 +1,1278 @@
+/* Audit Log Page Styles - CyberRiskIQ */
+
+.audit-log-page {
+  position: relative;
+  width: 100%;
+  color: var(--sc-text-main, #edf3ff);
+  font-family: inherit;
+  font-size: 12px;
+  background: transparent;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  --al-bg: transparent;
+  --al-panel: #00141f;
+  --al-border: #06314a;
+  --al-line: #0a2a3f;
+  --al-text: #edf3ff;
+  --al-muted: #b0cbe3;
+  --al-cyan: #00cbff;
+}
+
+.audit-log-page *,
+.al-modal-back * {
+  box-sizing: border-box;
+}
+
+.audit-log-page button,
+.audit-log-page input,
+.audit-log-page select,
+.audit-log-page textarea,
+.al-modal-back button,
+.al-modal-back input,
+.al-modal-back select {
+  font: inherit;
+  color: inherit;
+}
+
+.audit-log-page button,
+.al-modal-back button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.audit-log-page button:disabled,
+.al-modal-back button:disabled {
+  cursor: default;
+  opacity: .4;
+}
+
+.audit-log-page h1,
+.audit-log-page h2,
+.audit-log-page h3,
+.audit-log-page p,
+.audit-log-page ul,
+.audit-log-page dl,
+.audit-log-page dd,
+.audit-log-page dt,
+.al-modal-back h2,
+.al-modal-back h3,
+.al-modal-back p,
+.al-modal-back dl,
+.al-modal-back dd,
+.al-modal-back dt {
+  margin: 0;
+}
+
+.audit-log-page .icon,
+.al-modal-back .icon {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+/* Scenery banner with mountain backdrop and hexagon mesh */
+.audit-log-page .al-scenery {
+  pointer-events: none;
+  position: absolute;
+  top: -9px;
+  left: 30%;
+  width: 57%;
+  height: 177px;
+  z-index: 0;
+  overflow: hidden;
+  opacity: .87;
+  mask-image: linear-gradient(90deg, transparent 0%, black 28%, black 74%, transparent 100%);
+}
+
+.audit-log-page .al-scenery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  filter: grayscale(1) sepia(1) hue-rotate(165deg) saturate(4.6) brightness(.75) contrast(1.4);
+}
+
+.audit-log-page .al-scenery::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #00101b22, transparent 37%, #000e18 100%);
+}
+
+.audit-log-page .al-scenery > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .16;
+  mix-blend-mode: screen;
+}
+
+/* Page content */
+.audit-log-page .al-content {
+  padding: 0 16px 28px 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.audit-log-page .al-content:focus {
+  outline: none;
+}
+
+/* Page header */
+.audit-log-page .al-page-header {
+  height: 90px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 9px 4px 0 2px;
+  gap: 18px;
+}
+
+.audit-log-page .al-breadcrumb {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: #e5edfa;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.audit-log-page .al-breadcrumb > button {
+  padding: 0;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.audit-log-page .al-breadcrumb > .icon {
+  width: 11px;
+  height: 11px;
+  transform: rotate(-90deg);
+}
+
+.audit-log-page .al-page-header h1 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -.022em;
+  margin-top: 5px;
+  color: #edf3ff;
+}
+
+.audit-log-page .al-page-header > div > p {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #d4e4f4;
+  line-height: 1.4;
+}
+
+.audit-log-page .al-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 98px;
+  padding-top: 14px;
+}
+
+.audit-log-page .al-header-actions > p {
+  color: #c9e2fb;
+  font-size: 10px !important;
+  line-height: 1.5 !important;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  margin: 0 !important;
+  white-space: nowrap;
+}
+
+/* Buttons */
+.audit-log-page .al-button,
+.al-modal-back .al-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #076396;
+  border-radius: 5px;
+  min-height: 33px;
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 400;
+  color: #ecf4ff;
+  background: linear-gradient(180deg, #00243a80, #001525);
+  transition: all .15s ease;
+}
+
+.audit-log-page .al-button .icon,
+.al-modal-back .al-button .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.audit-log-page .al-button:hover,
+.al-modal-back .al-button:hover {
+  background: #04334f;
+  border-color: #0ca8eb;
+}
+
+.audit-log-page .al-button-primary,
+.al-modal-back .al-button-primary {
+  color: #fff;
+  background: linear-gradient(180deg, #008cff, #0072ff);
+  border-color: #0987ff;
+  box-shadow: 0 0 16px #0089ff2d, inset 0 0 1px #8fcaff;
+}
+
+.audit-log-page .al-button-primary:hover,
+.al-modal-back .al-button-primary:hover {
+  background: linear-gradient(180deg, #13a0ff, #0a7eff);
+}
+
+.audit-log-page .full-width,
+.al-modal-back .full-width {
+  width: 100%;
+}
+
+/* Layout */
+.audit-log-page .al-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 268px;
+  gap: 13px;
+  align-items: start;
+}
+
+.audit-log-page .al-main-column {
+  min-width: 0;
+  padding-top: 6px;
+}
+
+.audit-log-page .al-right-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Metrics row */
+.audit-log-page .al-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 13px;
+}
+
+.audit-log-page .al-metric {
+  height: 97px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 15px 12px;
+  min-width: 0;
+  border: 1px solid var(--al-border);
+  border-radius: 5px;
+  background: linear-gradient(125deg, #001723, #00101b 86%);
+}
+
+.audit-log-page .al-metric-icon {
+  flex: none;
+  width: 41px;
+  height: 41px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #062643;
+  color: #7cc5ff;
+}
+
+.audit-log-page .al-metric-icon .icon {
+  width: 26px;
+  height: 26px;
+}
+
+.audit-log-page .metric-red .al-metric-icon {
+  color: #ff5a73;
+  background: radial-gradient(circle, #491b2c, #241323);
+}
+
+.audit-log-page .metric-green .al-metric-icon {
+  color: #02d8a9;
+  background: radial-gradient(circle, #00473a, #00221f);
+}
+
+.audit-log-page .al-metric p {
+  font-size: 11px;
+  line-height: 14px;
+  color: #e0edfb;
+}
+
+.audit-log-page .al-metric strong {
+  display: block;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 7px;
+  letter-spacing: -.4px;
+  color: #f3f5ff;
+}
+
+.audit-log-page .al-metric .trend {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 9px;
+  font-size: 11px;
+}
+
+.audit-log-page .al-metric .trend b {
+  font-weight: 500;
+}
+
+.audit-log-page .al-metric .trend small {
+  margin-left: 3px;
+  color: #c0d7ee;
+  font-size: 10px;
+}
+
+.audit-log-page .al-metric .trend.up {
+  color: #00e5c5;
+}
+
+.audit-log-page .al-metric .trend.up-red {
+  color: #ff3c61;
+}
+
+.audit-log-page .al-metric .trend .icon {
+  width: 12px;
+  height: 12px;
+}
+
+/* Charts Grid */
+.audit-log-page .al-chart-grid {
+  display: grid;
+  grid-template-columns: 1.38fr .64fr;
+  gap: 13px;
+  height: 223px;
+  margin-bottom: 14px;
+}
+
+.audit-log-page .al-panel {
+  min-width: 0;
+  border: 1px solid var(--al-border);
+  border-radius: 5px;
+  background: linear-gradient(120deg, #00121c 0%, #001520 100%);
+}
+
+.audit-log-page .al-panel > header {
+  height: 38px;
+  padding: 11px 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.audit-log-page .al-panel > header h2 {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--al-text);
+}
+
+.audit-log-page .al-chart-legend {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 2px 22px 3px 15px;
+}
+
+.audit-log-page .al-chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #c5dff4;
+}
+
+.audit-log-page .al-chart-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.audit-log-page .al-stack-chart {
+  position: relative;
+  height: calc(100% - 38px);
+}
+
+.audit-log-page .al-stack-chart svg {
+  width: 100%;
+  height: calc(100% - 20px);
+  overflow: visible;
+}
+
+.audit-log-page .al-grid {
+  stroke: #084262;
+  stroke-width: .7;
+  stroke-dasharray: 1.5 2;
+}
+
+.audit-log-page .al-chart-label {
+  fill: #c7dcf0;
+  font-size: 10px;
+}
+
+.audit-log-page .al-stack-tip {
+  position: absolute;
+  top: 27px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 5px 7px;
+  border: 1px solid #25597d;
+  border-radius: 4px;
+  color: #deedfc;
+  background: #001323e8;
+  box-shadow: 0 3px 9px #0006;
+  pointer-events: none;
+  transition: left .15s ease-out;
+}
+
+.audit-log-page .al-stack-tip span {
+  font-size: 10px;
+}
+
+.audit-log-page .al-stack-tip strong {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.audit-log-page .al-donut {
+  height: calc(100% - 38px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px 10px 10px;
+}
+
+.audit-log-page .al-donut svg {
+  width: 46%;
+  max-width: 168px;
+  overflow: visible;
+}
+
+.audit-log-page .al-donut-total {
+  fill: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.audit-log-page .al-donut-sub {
+  fill: #dae8fb;
+  font-size: 10px;
+}
+
+.audit-log-page .al-donut-legend {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.audit-log-page .al-donut-legend button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 2px 0;
+  color: #d5e7f8;
+  font-size: 11px;
+  text-align: left;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: color .15s;
+}
+
+.audit-log-page .al-donut-legend button i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.audit-log-page .al-donut-legend button b {
+  margin-left: auto;
+  font-weight: 400;
+}
+
+.audit-log-page .al-donut-legend button.is-active {
+  color: #5edbff;
+}
+
+/* Table Section */
+.audit-log-page .al-table-section {
+  min-width: 0;
+}
+
+.audit-log-page .al-table-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 37px;
+  margin-bottom: 10px;
+}
+
+.audit-log-page .al-search-field {
+  position: relative;
+  flex: 1 1 315px;
+  min-width: 190px;
+  max-width: 332px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid #075078;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #001722, #001726);
+}
+
+.audit-log-page .al-search-field > .icon {
+  width: 16px;
+  height: 16px;
+  color: #cfe6ff;
+}
+
+.audit-log-page .al-search-field > input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--al-text);
+  font-size: 11px;
+  outline: none;
+}
+
+.audit-log-page .al-search-field > input::placeholder {
+  color: #aac8e5;
+  opacity: 1;
+}
+
+.audit-log-page .al-search-field:focus-within {
+  border-color: #12a5ed;
+}
+
+.audit-log-page .al-select,
+.audit-log-page .al-date-filter {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  height: 35px;
+  flex: 0 0 auto;
+  border: 1px solid #063b58;
+  border-radius: 5px;
+  background: #001724;
+}
+
+.audit-log-page .al-select select,
+.audit-log-page .al-date-filter select {
+  appearance: none;
+  min-width: 0;
+  height: 100%;
+  padding: 0 28px 0 12px;
+  background: transparent;
+  border: 0;
+  color: #d7e9fa;
+  font-size: 10.5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.audit-log-page .al-select {
+  width: 132px;
+}
+
+.audit-log-page .al-date-filter {
+  width: 212px;
+  margin-left: auto;
+  padding-left: 12px;
+  gap: 8px;
+}
+
+.audit-log-page .al-date-filter > .icon:first-child {
+  width: 16px;
+  height: 16px;
+  color: #d0e3f7;
+}
+
+.audit-log-page .al-select > .icon,
+.audit-log-page .al-date-filter > .icon:last-child {
+  position: absolute;
+  pointer-events: none;
+  width: 12px;
+  height: 12px;
+  right: 9px;
+  top: 11px;
+  color: #b7d3e8;
+}
+
+.audit-log-page .al-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #053b58;
+  border-radius: 5px;
+  background: #00111c;
+}
+
+.audit-log-page .al-table {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+.audit-log-page .al-table thead {
+  background: linear-gradient(90deg, #001628, #002033);
+}
+
+.audit-log-page .al-table th {
+  height: 30px;
+  padding: 5px 6px;
+  color: #c5ddf6;
+  text-align: left;
+  font-weight: 400;
+  border-right: 1px solid #06314970;
+  white-space: nowrap;
+}
+
+.audit-log-page .al-table td {
+  height: 34px;
+  padding: 4px 6px;
+  border-bottom: 1px solid #043047;
+  color: #ebf3ff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.audit-log-page .al-table tbody tr:hover {
+  background: #053c542c;
+}
+
+.audit-log-page .al-user-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.audit-log-page .al-user-cell > i {
+  width: 24px;
+  height: 24px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--dot, #1d78ff);
+  color: white;
+  font-style: normal;
+  font-size: 10px;
+  flex: none;
+}
+
+.audit-log-page .al-view {
+  min-width: 74px;
+  height: 26px;
+  border: 1px solid #1472be;
+  border-radius: 5px;
+  color: #bfe8ff;
+  background: linear-gradient(180deg, #0c3a69, #072d51);
+  font-size: 11px;
+}
+
+.audit-log-page .al-view:hover {
+  background: linear-gradient(180deg, #0f4a84, #083864);
+}
+
+.audit-log-page .al-badge,
+.al-modal-back .al-badge {
+  min-width: 62px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  padding: 2px 9px;
+  font-size: 10px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.badge-high {
+  color: #ffd6de !important;
+  background: linear-gradient(90deg, #65182a, #913242) !important;
+  border-color: #af374a !important;
+}
+
+.badge-medium {
+  color: #fff7df !important;
+  background: linear-gradient(90deg, #674311, #a46a0e 60%, #72480d) !important;
+  border-color: #a3731c !important;
+}
+
+.badge-low {
+  color: #d0fff6 !important;
+  background: linear-gradient(90deg, #003e3c, #006459 60%, #004743) !important;
+  border-color: #008b7d !important;
+}
+
+.audit-log-page .al-table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 36px;
+  padding-top: 9px;
+}
+
+.audit-log-page .al-table-footer p {
+  color: #a9c4de;
+  font-size: 10.5px;
+}
+
+.audit-log-page .al-table-footer nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.audit-log-page .al-table-footer nav button,
+.audit-log-page .al-table-footer nav span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 31px;
+  padding: 0 7px;
+  border: 1px solid #06374f;
+  border-radius: 4px;
+  background: #00141f;
+  color: #d5e8fa;
+  font-size: 11px;
+}
+
+.audit-log-page .al-table-footer nav button .icon {
+  width: 12px;
+  height: 12px;
+}
+
+.audit-log-page .al-table-footer nav .left {
+  transform: rotate(90deg);
+}
+
+.audit-log-page .al-table-footer nav .right {
+  transform: rotate(-90deg);
+}
+
+.audit-log-page .al-table-footer nav button.is-current {
+  border-color: #087fff;
+  background: linear-gradient(140deg, #0c9dff, #1853f6 75%);
+  color: white;
+}
+
+/* Dropdowns in Table */
+.audit-log-page .al-dd {
+  position: relative;
+}
+
+.audit-log-page .al-dd-trigger {
+  display: inline-flex;
+  align-items: center;
+}
+
+.audit-log-page .al-dd-menu {
+  position: absolute;
+  top: calc(100% + 7px);
+  right: 0;
+  z-index: 60;
+  overflow: hidden;
+  border: 1px solid #126088;
+  border-radius: 7px;
+  background: #001725;
+  box-shadow: 0 15px 50px #000a;
+}
+
+.audit-log-page .al-row-menu .al-dd-trigger {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.audit-log-page .al-row-menu .al-dd-trigger:hover {
+  color: #00cdff;
+}
+
+.audit-log-page .al-pop-card {
+  padding: 6px;
+}
+
+.audit-log-page .al-pop-card.menu > button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  color: #c9e1f6;
+  text-align: left;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.audit-log-page .al-pop-card.menu > button:hover {
+  background: #07425b;
+  color: white;
+}
+
+.audit-log-page .al-pop-card.menu > button > .icon {
+  color: #67d4ff;
+  width: 16px;
+  height: 16px;
+}
+
+/* Right Rail */
+.audit-log-page .filters-panel header,
+.audit-log-page .quick-panel header,
+.audit-log-page .retention-panel header {
+  height: 38px;
+  padding: 11px 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.audit-log-page .filters-panel h2,
+.audit-log-page .quick-panel h2,
+.audit-log-page .retention-panel h2 {
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.audit-log-page .al-text-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #00c8ff;
+  font-size: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.audit-log-page .al-text-btn .icon {
+  width: 12px;
+  height: 12px;
+}
+
+.audit-log-page .filter-stack {
+  padding: 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.audit-log-page .filter-stack > label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #e9f0f8;
+  font-size: 11px;
+}
+
+.audit-log-page .filter-stack input {
+  height: 35px;
+  padding: 0 11px;
+  border: 1px solid #063b58;
+  border-radius: 5px;
+  background: #001724;
+  color: #d7e9fa;
+  font-size: 10.5px;
+}
+
+.audit-log-page .filter-stack input::placeholder {
+  color: #aac8e5;
+}
+
+.audit-log-page .filter-stack input:focus {
+  outline: none;
+  border-color: #12a5ed;
+}
+
+.audit-log-page .filter-stack .al-select {
+  width: 100%;
+}
+
+.audit-log-page .al-quick-actions {
+  padding: 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.audit-log-page .al-quick-actions button {
+  height: 39px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 13px;
+  border: 1px solid #1a5b8b;
+  border-radius: 5px;
+  color: #eef5ff;
+  background: linear-gradient(180deg, #00243a80, #001525);
+  text-align: left;
+  transition: all .15s ease;
+}
+
+.audit-log-page .al-quick-actions button:hover {
+  background: #04334f;
+  border-color: #0ca8eb;
+}
+
+.audit-log-page .retention-panel {
+  padding-bottom: 12px;
+}
+
+.audit-log-page .al-retention-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 12px 16px;
+  border-bottom: 1px solid #083247;
+}
+
+.audit-log-page .al-retention-row h3,
+.audit-log-page .al-frameworks h3,
+.audit-log-page .al-backup h3 {
+  color: #c8dbed;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.audit-log-page .al-retention-row strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.audit-log-page .al-frameworks {
+  padding: 15px 12px 11px;
+  border-bottom: 1px solid #083247;
+}
+
+.audit-log-page .al-frameworks > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.audit-log-page .al-frameworks span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 9px;
+  border: 1px solid #096796;
+  border-radius: 5px;
+  color: #d4edff;
+  background: linear-gradient(135deg, #003559, #00213a);
+  font-size: 10px;
+}
+
+.audit-log-page .al-frameworks span .icon {
+  width: 13px;
+  height: 13px;
+  color: #10deb0;
+}
+
+.audit-log-page .al-backup {
+  padding: 14px 12px 0;
+}
+
+.audit-log-page .al-backup p {
+  margin-top: 7px;
+  font-size: 12px;
+  color: #eef6ff;
+}
+
+.audit-log-page .al-backup span {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #00deb2;
+  font-size: 12px;
+}
+
+.audit-log-page .al-backup .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Modals & Dialogs */
+.al-modal-back {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #000912c9;
+  backdrop-filter: blur(8px);
+}
+
+.al-modal {
+  width: 100%;
+  max-width: 640px;
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  border: 1px solid #136a90;
+  border-radius: 12px;
+  background: linear-gradient(140deg, #042535, #001622 65%);
+  color: #e1efff;
+  box-shadow: 0 25px 100px #000b;
+}
+
+.al-modal > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 23px 24px 20px;
+  border-bottom: 1px solid #144153;
+}
+
+.al-modal > header h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -.4px;
+  line-height: 1.25;
+}
+
+.al-modal .al-icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 4px;
+  color: #b0cbe3;
+  cursor: pointer;
+}
+
+.al-modal .al-icon-btn:hover {
+  background: #0b3149;
+  color: #fff;
+}
+
+.al-modal-body {
+  padding: 23px 24px;
+}
+
+.al-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.al-detail-grid h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #d8ecff;
+}
+
+.al-detail-grid dl {
+  display: grid;
+  gap: 10px;
+}
+
+.al-detail-grid dt {
+  color: #9db9d2;
+  font-size: 11px;
+}
+
+.al-detail-grid dd {
+  color: #edf3ff;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.al-detail-grid p {
+  color: #b6d0e8;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.al-dialog-copy p {
+  color: #b6d0e8;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.al-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.al-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #c7dfef;
+  font-size: 12px;
+}
+
+.al-form input,
+.al-form select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  min-height: 39px;
+  border-radius: 5px;
+  border: 1px solid #1a4d66;
+  background: #001421;
+  color: #eff8ff;
+  font-size: 12px;
+  outline: none;
+}
+
+.al-form input:focus,
+.al-form select:focus {
+  border-color: #12a5ed;
+}
+
+.al-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+/* Toasts */
+.al-toasts {
+  position: fixed;
+  z-index: 300;
+  bottom: 18px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.al-toasts > div {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  max-width: min(420px, calc(100vw - 36px));
+  padding: 12px 14px;
+  border: 1px solid #087996;
+  background: #002838;
+  color: #d7eefc;
+  border-radius: 6px;
+  box-shadow: 0 12px 30px #000a;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.al-toasts > div > .icon {
+  color: #00dab5;
+  width: 18px;
+  height: 18px;
+}
+
+.al-toasts button {
+  margin-left: auto;
+  padding: 0;
+  color: #7ca8c4;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.al-toasts button .icon {
+  width: 13px;
+  height: 13px;
+}
+
+/* Responsive */
+@media (max-width: 1180px) {
+  .audit-log-page .al-content {
+    padding-inline: 13px;
+  }
+  .audit-log-page .al-layout {
+    grid-template-columns: 1fr;
+  }
+  .audit-log-page .al-right-rail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .audit-log-page .al-header-actions {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 960px) {
+  .audit-log-page .al-right-rail {
+    grid-template-columns: 1fr;
+  }
+  .audit-log-page .al-page-header {
+    height: auto;
+    min-height: 117px;
+    gap: 10px;
+    align-items: center;
+  }
+  .audit-log-page .al-header-actions > p {
+    display: none;
+  }
+  .audit-log-page .al-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .audit-log-page .al-chart-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .audit-log-page .timeline-panel,
+  .audit-log-page .donut-panel {
+    min-height: 230px;
+  }
+}
+
+@media (max-width: 700px) {
+  .audit-log-page .al-page-header h1 {
+    font-size: 26px;
+  }
+  .audit-log-page .al-metrics {
+    grid-template-columns: 1fr;
+  }
+  .audit-log-page .al-table-filters {
+    flex-wrap: wrap;
+  }
+  .audit-log-page .al-search-field {
+    max-width: none;
+    flex-basis: 100%;
+  }
+  .audit-log-page .al-select {
+    flex: 1 1 120px;
+  }
+  .audit-log-page .al-date-filter {
+    width: 100%;
+    margin-left: 0;
+  }
+  .al-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,1867 @@
+/* Vulnerabilities Page Styles - cyberriskiq */
+
+.vuln-page {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 58px);
+  width: 100%;
+  color: #f3f7ff;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  background:
+    radial-gradient(circle at 65% 20%, rgba(0, 123, 194, 0.08), transparent 28%),
+    linear-gradient(180deg, #00101a 0%, #000c14 100%);
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.vuln-page *,
+.vuln-modal-backdrop * {
+  box-sizing: border-box;
+}
+
+.vuln-page button,
+.vuln-page input,
+.vuln-page select,
+.vuln-modal-backdrop button,
+.vuln-modal-backdrop input,
+.vuln-modal-backdrop select {
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+
+.vuln-page button,
+.vuln-modal-backdrop button {
+  cursor: pointer;
+}
+
+/* Mountain banner background - using shared sc-main mountain scenery */
+.vuln-page::before {
+  display: none;
+}
+
+/* ============ Page Intro ============ */
+
+.vuln-page .page-intro {
+  position: relative;
+  z-index: 1;
+  height: 100px;
+  padding: 12px 22px 0;
+}
+
+.vuln-page .breadcrumbs {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #a8bdd9;
+  font-size: 11px;
+}
+
+.vuln-page .breadcrumbs button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: #a8bdd9;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.vuln-page .breadcrumbs button:hover {
+  color: #fff;
+}
+
+.vuln-page .breadcrumbs b {
+  color: #e4efff;
+  font-weight: 500;
+}
+
+.vuln-page .page-intro h1 {
+  margin: 1px 0 0;
+  font-size: 29px;
+  font-weight: 650;
+  line-height: 37px;
+  letter-spacing: -0.6px;
+  color: #f3f7ff;
+}
+
+.vuln-page .page-intro p {
+  margin: 0;
+  color: #b5c9e4;
+  font-size: 12.5px;
+}
+
+.vuln-page .hero-motto {
+  position: absolute;
+  top: 40px;
+  right: 336px;
+  color: #f4f9ff;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 2.6px;
+  text-align: center;
+  text-shadow: 0 0 11px #00101b;
+}
+
+.vuln-page .intro-actions {
+  position: absolute;
+  top: 28px;
+  right: 14px;
+  display: flex;
+  gap: 9px;
+}
+
+.vuln-page .ghost-action {
+  height: 36px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #1a4a6d;
+  border-radius: 6px;
+  color: #dcebfc;
+  background: rgba(3, 24, 40, 0.88);
+  font-size: 12px;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.vuln-page .ghost-action:hover {
+  background: rgba(5, 36, 60, 0.95);
+  border-color: #246392;
+}
+
+.vuln-page .add-finding {
+  height: 36px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #0299f8;
+  border-radius: 6px;
+  color: #fff;
+  background: linear-gradient(135deg, #0aaaff, #068deb);
+  box-shadow: 0 0 17px rgba(0, 159, 255, 0.42);
+  font-size: 12px;
+  font-weight: 500;
+  transition: transform 130ms ease, filter 130ms ease;
+}
+
+.vuln-page .add-finding:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+}
+
+/* ============ Workspace ============ */
+
+.vuln-page .workspace {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  padding: 0 12px 35px;
+  transition: margin-right 200ms ease;
+}
+
+.vuln-page.with-detail .workspace {
+  margin-right: 300px;
+}
+
+.vuln-page .stats-grid {
+  height: 94px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.vuln-page .stats-grid.five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.vuln-page .stat-card {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 13px;
+  border: 1px solid var(--sc-border, #06314a);
+  border-radius: 5px;
+  background: linear-gradient(125deg, #001723, #00101b 86%);
+  box-shadow: none;
+}
+
+.vuln-page .stat-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.vuln-page .stat-icon.blue {
+  color: #0aaaff;
+  background: rgba(0, 112, 200, 0.14);
+  box-shadow: 0 0 16px rgba(0, 145, 244, 0.12);
+}
+
+.vuln-page .stat-icon.red {
+  color: #ff3652;
+  background: rgba(208, 31, 57, 0.15);
+  box-shadow: 0 0 16px rgba(255, 32, 61, 0.1);
+}
+
+.vuln-page .stat-copy {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.vuln-page .stat-copy > span,
+.vuln-page .stat-copy > strong {
+  display: block;
+}
+
+.vuln-page .stat-copy > span {
+  overflow: hidden;
+  margin-bottom: 2px;
+  color: #f2f6fd;
+  font-size: 10.5px;
+  text-overflow: ellipsis;
+}
+
+.vuln-page .stat-copy > strong {
+  font-size: 20px;
+  font-weight: 620;
+  line-height: 23px;
+  color: #fff;
+}
+
+.vuln-page .stat-copy small {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.vuln-page .stat-copy small.positive {
+  color: #00dda4;
+}
+
+.vuln-page .stat-copy small.negative {
+  color: #ff2f4b;
+}
+
+.vuln-page .stat-copy em {
+  margin-left: 6px;
+  color: #aabed8;
+  font-size: 9px;
+  font-style: normal;
+}
+
+/* ============ Pipeline ============ */
+
+.vuln-page .pipeline {
+  height: 78px;
+  margin-top: 12px;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid #0a3854;
+  border-radius: 6px;
+  background: linear-gradient(150deg, rgba(4, 27, 43, 0.97), rgba(1, 18, 30, 0.98));
+}
+
+.vuln-page .pipeline-head {
+  width: 134px;
+  flex: 0 0 134px;
+  padding: 10px 8px 10px 12px;
+  border-right: 1px solid #0a2f48;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vuln-page .pipeline-head strong {
+  display: block;
+  color: #f4f8fd;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 13.5px;
+}
+
+.vuln-page .pipeline-head p {
+  margin: 3px 0 0;
+  color: #9fb6d2;
+  font-size: 8.5px;
+  line-height: 12px;
+}
+
+.vuln-page .pipeline-step {
+  min-width: 0;
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 5px 8px 7px;
+  border-right: 1px solid #0a2f48;
+  overflow: hidden;
+  transition: background 150ms ease;
+}
+
+.vuln-page .pipeline-step:hover {
+  background: rgba(0, 170, 255, 0.04);
+}
+
+.vuln-page .pipeline-step:last-child {
+  border-right: 0;
+}
+
+.vuln-page .pipeline-step-icon,
+.vuln-page .pipeline-step > svg {
+  flex: 0 0 auto;
+  color: #00d69c;
+  filter: drop-shadow(0 0 5px rgba(0, 214, 156, 0.35));
+}
+
+.vuln-page .pipeline-step-body {
+  min-width: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.vuln-page .pipeline-step b {
+  display: block;
+  overflow: hidden;
+  color: #eef4fb;
+  font-size: 8.8px;
+  font-weight: 600;
+  line-height: 13px;
+  letter-spacing: -0.015em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vuln-page .pipeline-step span {
+  display: block;
+  overflow: hidden;
+  margin-top: 2px;
+  color: #9db4d0;
+  font-size: 8px;
+  line-height: 12px;
+  letter-spacing: -0.01em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* ============ Tabs + Filters ============ */
+
+.vuln-page .finding-controls {
+  padding-top: 10px;
+}
+
+.vuln-page .finding-tabs {
+  height: 40px;
+  display: flex;
+  border-bottom: 1px solid #0a283e;
+}
+
+.vuln-page .finding-tabs button {
+  position: relative;
+  padding: 0 13px;
+  border: 0;
+  color: #b8cae3;
+  background: transparent;
+  font-size: 10px;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.vuln-page .finding-tabs button:first-child {
+  padding-left: 6px;
+}
+
+.vuln-page .finding-tabs button.active {
+  color: #aedeff;
+  font-weight: 600;
+}
+
+.vuln-page .finding-tabs button.active::after {
+  position: absolute;
+  right: 6px;
+  bottom: -1px;
+  left: 6px;
+  height: 2px;
+  content: "";
+  background: #15aaff;
+  box-shadow: 0 0 6px rgba(18, 168, 255, 0.55);
+}
+
+.vuln-page .filters-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 10px;
+}
+
+.vuln-page .filters-row label {
+  width: 236px;
+  height: 33px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #0c3c5d;
+  border-radius: 5px;
+  color: #a9c4df;
+  background: #041c2e;
+}
+
+.vuln-page .filters-row input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  color: #e6f3ff;
+  background: transparent;
+  font-size: 11px;
+}
+
+.vuln-page .filters-row input::placeholder {
+  color: #a7bad4;
+  opacity: 1;
+}
+
+.vuln-page .filters-row button {
+  height: 33px;
+  min-width: 92px;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  border: 1px solid #0c3c5d;
+  border-radius: 5px;
+  color: #cee0f7;
+  background: linear-gradient(180deg, #062138, #031827);
+  white-space: nowrap;
+  font-size: 10px;
+  cursor: pointer;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+.vuln-page .filters-row button:hover {
+  border-color: #125585;
+}
+
+.vuln-page .filters-row.secondary {
+  padding-top: 9px;
+  padding-bottom: 10px;
+}
+
+.vuln-page .filters-row.secondary button {
+  min-width: 0;
+}
+
+.vuln-page .clear-filters {
+  margin-left: auto;
+  color: #14aaff;
+  font-size: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.vuln-page .clear-filters:hover {
+  text-decoration: underline;
+}
+
+/* ============ Findings Table ============ */
+
+.vuln-page .table-wrap {
+  min-height: 358px;
+  overflow: hidden;
+  border: 1px solid #0b3855;
+  border-radius: 6px;
+  background: rgba(1, 18, 30, 0.94);
+}
+
+.vuln-page .finding-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #d4e1f3;
+  font-size: 9.5px;
+}
+
+.vuln-page .finding-table thead {
+  height: 33px;
+  background: linear-gradient(180deg, #08233a, #051b2c);
+}
+
+.vuln-page .finding-table th {
+  padding: 0 7px;
+  overflow: hidden;
+  border-right: 1px solid #0b3049;
+  color: #c4d7ee;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.vuln-page .finding-table th:last-child {
+  border-right: 0;
+  text-align: center;
+}
+
+.vuln-page .finding-table tbody tr {
+  height: 38px;
+  border-top: 1px solid #0a2b41;
+  transition: background 130ms ease;
+  cursor: pointer;
+}
+
+.vuln-page .finding-table tbody tr:hover,
+.vuln-page .finding-table tbody tr.selected {
+  background: rgba(6, 47, 75, 0.52);
+}
+
+.vuln-page .finding-table tbody tr.selected {
+  box-shadow: inset 2px 0 #12a9ff;
+}
+
+.vuln-page .finding-table td {
+  padding: 0 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vuln-page .finding-table td:last-child {
+  text-align: center;
+}
+
+.vuln-page .check-col { width: 27px; }
+.vuln-page .priority-col { width: 55px; }
+.vuln-page .cve-col { width: 118px; }
+.vuln-page .asset-col { width: 100px; }
+.vuln-page .critical-col { width: 68px; }
+.vuln-page .cvss-col { width: 44px; }
+.vuln-page .exploit-col { width: 88px; }
+.vuln-page .exposure-col { width: 63px; }
+.vuln-page .score-col { width: 72px; }
+.vuln-page .days-col { width: 60px; }
+.vuln-page .remediation-col { width: 88px; }
+.vuln-page .action-col { width: 45px; }
+
+.vuln-page .checkbox {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 1px solid #7ca7cf;
+  border-radius: 3px;
+  background: #031523;
+  cursor: pointer;
+}
+
+.vuln-page .checkbox.checked {
+  border-color: #0aa8ff;
+  background: #0a8de1;
+}
+
+.vuln-page .checkbox.checked::after {
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 1.5px 1.5px 0;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.vuln-page .priority-badge {
+  min-width: 30px;
+  height: 19px;
+  padding: 0 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.vuln-page .priority-badge.p0 { background: linear-gradient(90deg, #c81f37, #e02a42); box-shadow: 0 0 8px rgba(232, 33, 62, 0.3); }
+.vuln-page .priority-badge.p1 { background: linear-gradient(90deg, #b34a1a, #cd5a23); }
+.vuln-page .priority-badge.p2 { background: linear-gradient(90deg, #b97709, #cf9018); }
+.vuln-page .priority-badge.p3 { background: linear-gradient(90deg, #1c56c4, #2668dd); }
+
+.vuln-page .cve-cell strong,
+.vuln-page .cve-cell b,
+.vuln-page .cve-cell small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vuln-page .cve-cell strong {
+  color: #f3f7fd;
+  font-size: 9.5px;
+  font-weight: 600;
+}
+
+.vuln-page .cve-cell b {
+  color: #eaf1fa;
+  font-size: 9.5px;
+  font-weight: 500;
+}
+
+.vuln-page .cve-cell small {
+  margin-top: 1px;
+  color: #a8bfd9;
+  font-size: 8.5px;
+}
+
+.vuln-page .risk-badge {
+  min-width: 51px;
+  height: 19px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.vuln-page .risk-badge.critical { background: linear-gradient(90deg, #a72234, #bd3140); }
+.vuln-page .risk-badge.high { background: linear-gradient(90deg, #98411d, #b74a25); }
+.vuln-page .risk-badge.medium { background: linear-gradient(90deg, #b97709, #cf9018); }
+.vuln-page .risk-badge.low { background: linear-gradient(90deg, #00634f, #087b61); }
+
+.vuln-page .cvss {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.vuln-page .exploit-badge {
+  height: 20px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px;
+  font-size: 8.5px;
+  font-weight: 500;
+}
+
+.vuln-page .exploit-badge i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 5px currentColor;
+}
+
+.vuln-page .exploit-badge.exploited { border: 1px solid #92202f; color: #ff4b60; background: rgba(120, 15, 32, 0.34); }
+.vuln-page .exploit-badge.known { border: 1px solid #8a4a1c; color: #ff9241; background: rgba(110, 52, 15, 0.3); }
+.vuln-page .exploit-badge.likely { border: 1px solid #8b6c14; color: #ffc043; background: rgba(112, 80, 10, 0.28); }
+.vuln-page .exploit-badge.possible { border: 1px solid #14608b; color: #34b7ff; background: rgba(6, 66, 104, 0.3); }
+.vuln-page .exploit-badge.notseen { border: 1px solid #2a4a63; color: #9fb8d2; background: rgba(20, 44, 64, 0.4); }
+
+.vuln-page .exposure-net {
+  color: #ff8a45;
+}
+
+.vuln-page .score {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.vuln-page .score.danger { color: #ff2f4a; }
+.vuln-page .score.warn { color: #ffad0a; }
+.vuln-page .score.safe { color: #00dfaa; }
+
+.vuln-page .remediation-btn {
+  min-width: 72px;
+  height: 24px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 500;
+  transition: filter 130ms ease;
+  cursor: pointer;
+}
+
+.vuln-page .remediation-btn:hover {
+  filter: brightness(1.15);
+}
+
+.vuln-page .remediation-btn.patchnow { background: linear-gradient(135deg, #e02540, #c11730); box-shadow: 0 0 10px rgba(226, 32, 60, 0.25); }
+.vuln-page .remediation-btn.schedule { background: linear-gradient(135deg, #cd5c22, #b04a18); }
+.vuln-page .remediation-btn.plan { background: linear-gradient(135deg, #1a6fd8, #135cb9); }
+.vuln-page .remediation-btn.monitor { background: linear-gradient(135deg, #14547e, #0e4165); }
+
+.vuln-page .more {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  color: #d7e5f8;
+  background: transparent;
+  cursor: pointer;
+}
+
+.vuln-page .empty-state {
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #8ca8c7;
+}
+
+/* ============ Pagination ============ */
+
+.vuln-page .pagination {
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 3px;
+  color: #adc3df;
+  font-size: 10px;
+}
+
+.vuln-page .pagination > div {
+  display: flex;
+  gap: 4px;
+}
+
+.vuln-page .pagination button {
+  width: 26px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #0c3855;
+  border-radius: 5px;
+  color: #bed1e8;
+  background: #031726;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.vuln-page .pagination button.active {
+  border-color: #0e8ff0;
+  color: white;
+  background: linear-gradient(180deg, #2188f6, #1266cc);
+  box-shadow: 0 0 9px rgba(14, 142, 238, 0.3);
+}
+
+.vuln-page .pagination button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ============ Insights Row ============ */
+
+.vuln-page .insights-grid {
+  min-height: 178px;
+  display: grid;
+  grid-template-columns: 1fr 1.12fr 0.95fr 0.85fr;
+  gap: 8px;
+}
+
+.vuln-page .analytics-panel {
+  min-width: 0;
+  overflow: hidden;
+  padding: 10px 11px 8px;
+  border: 1px solid #0a3854;
+  border-radius: 6px;
+  background: linear-gradient(145deg, rgba(4, 27, 43, 0.97), rgba(1, 17, 28, 0.98));
+}
+
+.vuln-page .analytics-panel h3,
+.vuln-page .detail-panel h3 {
+  margin: 0;
+  color: #f7f9fd;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.vuln-page .sub-heading {
+  margin: 6px 0 0;
+  color: #c3d4e9;
+  font-size: 9.5px;
+  font-weight: 500;
+}
+
+.vuln-page .bar-chart {
+  height: 128px;
+  display: flex;
+  padding-top: 8px;
+}
+
+.vuln-page .bars {
+  position: relative;
+  height: 118px;
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 0 6px;
+}
+
+.vuln-page .bar-item {
+  position: relative;
+  height: 100%;
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.vuln-page .bar-item i {
+  width: 74%;
+  min-height: 14px;
+  order: 2;
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 0 9px rgba(255, 121, 44, 0.16);
+}
+
+.vuln-page .bar-item b {
+  order: 1;
+  margin-bottom: 3px;
+  color: #fff;
+  font-size: 10px;
+}
+
+.vuln-page .bar-item span {
+  height: 18px;
+  order: 3;
+  color: #b4c7dc;
+  font-size: 8px;
+  line-height: 18px;
+}
+
+.vuln-page .chart-content {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vuln-page .donut {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  flex: 0 0 96px;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+
+.vuln-page .donut::before {
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: #041727;
+  content: "";
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.vuln-page .donut.exploit {
+  background: conic-gradient(#ff344a 0 7%, #ff8b30 7% 32%, #12a9f8 32% 66%, #2b4d6d 66% 100%);
+}
+
+.vuln-page .donut > div {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+}
+
+.vuln-page .donut strong {
+  color: #f4f7fc;
+  font-size: 15px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.vuln-page .donut span {
+  margin-top: 2px;
+  color: #acbfd7;
+  font-size: 8.5px;
+}
+
+.vuln-page .chart-legend,
+.vuln-page .exploit-legend {
+  min-width: 0;
+  flex: 1;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  padding: 0 !important;
+}
+
+.vuln-page .chart-legend > div {
+  height: auto;
+  min-height: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #c2d2e7;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.vuln-page .chart-legend .dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+}
+
+.vuln-page .chart-legend span {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #b8ccdf;
+  font-size: 9px;
+}
+
+.vuln-page .chart-legend b {
+  flex: 0 0 auto;
+  color: #f1f6fc;
+  font-weight: 600;
+  font-size: 9.5px;
+  margin-left: 2px;
+}
+
+.vuln-page .chart-legend em {
+  flex: 0 0 auto;
+  color: #8da4c4;
+  font-style: normal;
+  font-size: 8.5px;
+}
+
+.vuln-page .exploit-legend .e0 { background: #ff344a; }
+.vuln-page .exploit-legend .e1 { background: #ff8b30; }
+.vuln-page .exploit-legend .e2 { background: #12a9f8; }
+.vuln-page .exploit-legend .e3 { background: #2b4d6d; }
+
+.vuln-page .section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vuln-page .section-title button {
+  height: 22px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 0;
+  color: #0aafff;
+  background: transparent;
+  font-size: 9.5px;
+  cursor: pointer;
+}
+
+.vuln-page .timeline {
+  position: relative;
+  margin-top: 12px;
+  padding-left: 22px;
+}
+
+.vuln-page .timeline::before {
+  position: absolute;
+  top: 3px;
+  bottom: 8px;
+  left: 7px;
+  width: 1px;
+  content: "";
+  background: #21445b;
+}
+
+.vuln-page .timeline > div {
+  position: relative;
+  min-height: 42px;
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  align-items: start;
+  column-gap: 4px;
+  color: #abc1dc;
+  font-size: 8.5px;
+}
+
+.vuln-page .timeline > div > i {
+  position: absolute;
+  top: 1px;
+  left: -21px;
+  width: 12px;
+  height: 12px;
+  border: 3px solid;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.vuln-page .timeline .red > i { color: #ff334d; background: #ff334d; }
+.vuln-page .timeline .orange > i { color: #ff8e2c; background: #ff8e2c; }
+.vuln-page .timeline .blue > i { color: #0caaff; background: #0caaff; }
+
+.vuln-page .timeline b {
+  color: #eef3f9;
+  font-weight: 500;
+}
+
+.vuln-page .timeline b small {
+  display: block;
+  margin-top: 3px;
+  color: #8fa9c7;
+  font-size: 8px;
+  font-weight: 400;
+}
+
+.vuln-page .freshness-list {
+  margin-top: 10px;
+}
+
+.vuln-page .freshness-list > div {
+  min-height: 33px;
+  display: flex;
+  gap: 9px;
+}
+
+.vuln-page .freshness-list svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: #00d69c;
+}
+
+.vuln-page .freshness-list b {
+  display: block;
+  color: #eaf2fa;
+  font-size: 9.5px;
+  font-weight: 500;
+}
+
+.vuln-page .freshness-list span {
+  display: block;
+  margin-top: 2px;
+  color: #8ea9c8;
+  font-size: 8.5px;
+}
+
+/* ============ Detail Panel ============ */
+
+.vuln-page .detail-panel {
+  position: absolute;
+  z-index: 20;
+  top: 90px;
+  right: 14px;
+  width: 288px;
+  overflow: hidden;
+  border: 1px solid #064365;
+  border-radius: 7px;
+  background: linear-gradient(130deg, #001624, #00111b 74%, #00141e);
+  box-shadow: none;
+}
+
+.vuln-page .detail-head {
+  position: relative;
+  min-height: 72px;
+  padding: 13px 30px 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.vuln-page .detail-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.vuln-page .detail-title > span {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 5px;
+}
+
+.vuln-page .detail-title > span.bug {
+  color: #ff3950;
+  background: rgba(146, 21, 42, 0.28);
+  box-shadow: inset 0 0 18px rgba(206, 27, 55, 0.2), 0 0 12px rgba(226, 30, 58, 0.14);
+}
+
+.vuln-page .detail-title h2 {
+  margin: 0 0 4px;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.vuln-page .detail-title p {
+  margin: 0;
+  color: #abc2dd;
+  font-size: 8.5px;
+}
+
+.vuln-page .detail-head-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  padding-top: 3px;
+}
+
+.vuln-page .exploited-pill {
+  padding: 3px 8px;
+  border: 1px solid #8f1e2f;
+  border-radius: 4px;
+  color: #ff4056;
+  background: rgba(103, 12, 28, 0.24);
+  font-size: 9px;
+}
+
+.vuln-page .panel-close {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  color: #acc2dc;
+  background: transparent;
+  cursor: pointer;
+}
+
+.vuln-page .detail-tabs {
+  height: 36px;
+  display: flex;
+  padding: 0 6px;
+  border-bottom: 1px solid #0b3956;
+}
+
+.vuln-page .detail-tabs button {
+  position: relative;
+  min-width: 0;
+  padding: 0 7px;
+  overflow: hidden;
+  border: 0;
+  color: #aec2db;
+  background: transparent;
+  font-size: 8.5px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.vuln-page .detail-tabs button.active {
+  color: #c7eaff;
+  font-weight: 600;
+}
+
+.vuln-page .detail-tabs button.active::after {
+  position: absolute;
+  right: 3px;
+  bottom: 0;
+  left: 3px;
+  height: 2px;
+  content: "";
+  background: #0da8ff;
+  box-shadow: 0 0 8px rgba(13, 168, 255, 0.5);
+}
+
+.vuln-page .summary-section {
+  padding: 11px 12px 10px;
+  border-bottom: 1px solid #0a2d44;
+}
+
+.vuln-page .summary-section > p {
+  margin: 7px 0 0;
+  color: #bcd0e7;
+  font-size: 9.5px;
+  line-height: 15px;
+}
+
+.vuln-page .summary-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  row-gap: 12px;
+  margin-top: 12px;
+}
+
+.vuln-page .summary-grid > div {
+  min-width: 0;
+}
+
+.vuln-page .summary-grid span {
+  display: block;
+  margin-bottom: 4px;
+  color: #9eb4cf;
+  font-size: 8.5px;
+}
+
+.vuln-page .summary-grid a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #17aaff;
+  font-size: 9.5px;
+  cursor: pointer;
+}
+
+.vuln-page .summary-grid b {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #f0f4fa;
+  font-size: 9.5px;
+  font-weight: 500;
+}
+
+.vuln-page .cvss-value {
+  color: #ff9a2e !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
+
+.vuln-page .cvss-value em {
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: #ffb35c;
+  background: rgba(140, 74, 10, 0.3);
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.vuln-page .exploit-inline {
+  color: #ff4156 !important;
+}
+
+.vuln-page .exploit-inline svg {
+  color: #ff4156;
+}
+
+.vuln-page .kev-inline svg {
+  color: #00d69c;
+}
+
+.vuln-page .affected-section {
+  padding: 10px 12px 11px;
+  border-bottom: 1px solid #0a2d44;
+}
+
+.vuln-page .affected-card {
+  margin-top: 8px;
+  padding: 9px 10px;
+  display: flex;
+  gap: 10px;
+  border: 1px solid #0c3a59;
+  border-radius: 6px;
+  background: rgba(4, 26, 42, 0.8);
+}
+
+.vuln-page .affected-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 5px;
+  color: #0baaff;
+  background: rgba(1, 86, 150, 0.32);
+}
+
+.vuln-page .affected-card > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.vuln-page .affected-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.vuln-page .affected-top b {
+  color: #f2f6fc;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.vuln-page .affected-top .risk-badge {
+  min-width: 0;
+  height: 17px;
+  font-size: 8px;
+}
+
+.vuln-page .affected-card small {
+  display: block;
+  margin-top: 4px;
+  color: #9fb6d2;
+  font-size: 8.5px;
+}
+
+.vuln-page .affected-card small i {
+  margin: 0 4px;
+  color: #476a8d;
+  font-style: normal;
+}
+
+.vuln-page .affected-card em {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #b9cde5;
+  font-size: 8.5px;
+  font-style: normal;
+}
+
+.vuln-page .breakdown-section {
+  padding: 10px 12px 6px;
+  border-bottom: 1px solid #0a2d44;
+}
+
+.vuln-page .risk-summary {
+  min-height: 128px;
+  display: flex;
+  align-items: center;
+}
+
+.vuln-page .gauge-wrap {
+  position: relative;
+  width: 104px;
+  height: 128px;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.vuln-page .gauge {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(#ff354d 0 var(--score, 0deg), #152b3f var(--score, 0deg) 360deg);
+  box-shadow: 0 0 12px rgba(255, 46, 71, 0.28);
+  animation: gaugeGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes gaugeGlow {
+  50% { box-shadow: 0 0 19px rgba(255, 46, 71, 0.38); }
+}
+
+@keyframes livePulse {
+  50% { box-shadow: 0 0 14px #00e6ac; opacity: 0.75; }
+}
+
+.vuln-page .gauge::before {
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #071c2b 20%, #02121e 70%);
+  content: "";
+}
+
+.vuln-page .gauge > div {
+  z-index: 1;
+}
+
+.vuln-page .gauge strong {
+  font-size: 19px;
+  font-weight: 550;
+  color: #fff;
+}
+
+.vuln-page .gauge span {
+  margin-left: 3px;
+  color: #c3cedd;
+  font-size: 9px;
+}
+
+.vuln-page .priority-label {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  min-width: 92px;
+  padding: 3px 8px 4px;
+  border: 1px solid #a7192f;
+  border-radius: 4px;
+  color: #ff4a5f;
+  background: #2b0d17;
+  font-size: 9px;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.vuln-page .priority-label small {
+  display: block;
+  margin-top: 1px;
+  color: #d78392;
+  font-size: 7.5px;
+}
+
+.vuln-page .risk-factors {
+  min-width: 0;
+  flex: 1;
+  margin-left: 6px;
+}
+
+.vuln-page .factor {
+  height: 20px;
+  display: grid;
+  grid-template-columns: 78px 1fr 16px;
+  align-items: center;
+  column-gap: 5px;
+  color: #aec2dc;
+  font-size: 7.8px;
+}
+
+.vuln-page .factor > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vuln-page .factor > i {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #0b263a;
+}
+
+.vuln-page .factor > i b {
+  height: 100%;
+  display: block;
+}
+
+.vuln-page .factor b.red { background: #ed334d; }
+.vuln-page .factor b.orange { background: #ffac2e; }
+.vuln-page .factor b.blue { background: #128fe8; }
+
+.vuln-page .factor em {
+  color: #dce8f5;
+  font-style: normal;
+  text-align: right;
+}
+
+.vuln-page .recommend-section {
+  padding: 11px 12px 12px;
+}
+
+.vuln-page .recommend-card {
+  padding: 10px 11px;
+  display: flex;
+  gap: 10px;
+  border: 1px solid #8c1a2c;
+  border-radius: 6px;
+  background: rgba(90, 10, 25, 0.22);
+  box-shadow: inset 0 0 22px rgba(160, 15, 40, 0.12);
+}
+
+.vuln-page .recommend-card > svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #ff3950;
+}
+
+.vuln-page .recommend-card span {
+  display: block;
+  color: #f4d7dc;
+  font-size: 8.5px;
+}
+
+.vuln-page .recommend-card strong {
+  display: block;
+  margin-top: 3px;
+  color: #ff4056;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.vuln-page .recommend-card p {
+  margin: 3px 0 0;
+  color: #d9aab3;
+  font-size: 8.5px;
+}
+
+.vuln-page .detail-actions {
+  display: flex;
+  gap: 7px;
+  margin-top: 11px;
+}
+
+.vuln-page .detail-actions button {
+  height: 30px;
+  padding: 0 9px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #0b4167;
+  border-radius: 5px;
+  color: #d6e8fa;
+  background: linear-gradient(180deg, #06243a, #031928);
+  font-size: 8.5px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: filter 130ms ease;
+}
+
+.vuln-page .detail-actions button:hover {
+  filter: brightness(1.15);
+}
+
+.vuln-page .detail-actions .primary-mini {
+  border-color: #0b98eb;
+  color: #fff;
+  background: linear-gradient(135deg, #0aa2f8, #067fd6);
+}
+
+.vuln-page .view-asset {
+  width: 100%;
+  height: 36px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #0299f8;
+  border-radius: 6px;
+  color: #fff;
+  background: linear-gradient(135deg, #0aaaff, #068deb);
+  box-shadow: 0 0 15px rgba(0, 159, 255, 0.32);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.vuln-page .risk-model-slot {
+  position: absolute;
+  right: 14px;
+  bottom: 26px;
+  width: 288px;
+}
+
+.vuln-page .risk-model-bar {
+  height: 38px;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #0a3854;
+  border-radius: 6px;
+  background: linear-gradient(145deg, rgba(4, 27, 43, 0.97), rgba(1, 17, 28, 0.98));
+}
+
+.vuln-page .risk-model-bar span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cadcf0;
+  font-size: 9.5px;
+}
+
+.vuln-page .risk-model-bar i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #00d6a0;
+  box-shadow: 0 0 8px #00d6a0;
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+.vuln-page .risk-model-bar a {
+  color: #14aaff;
+  font-size: 9.5px;
+  cursor: pointer;
+}
+
+.vuln-page .tab-placeholder {
+  min-height: 520px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #7d9dbd;
+  text-align: center;
+}
+
+.vuln-page .tab-placeholder h3 {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.vuln-page .tab-placeholder p {
+  color: #91aac4;
+}
+
+.vuln-page .tab-placeholder button {
+  margin-top: 9px;
+  padding: 8px 13px;
+  border: 1px solid #0c5a8a;
+  border-radius: 5px;
+  color: #bde6ff;
+  background: #062943;
+  cursor: pointer;
+}
+
+.reopen-panel {
+  position: fixed;
+  z-index: 25;
+  right: 18px;
+  bottom: 18px;
+  height: 36px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #118ee6;
+  border-radius: 5px;
+  color: white;
+  background: #075a9d;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* ============ Modal / Toast ============ */
+
+.vuln-modal-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 7, 12, 0.76);
+  backdrop-filter: blur(6px);
+}
+
+.vuln-modal {
+  width: 440px;
+  padding: 20px;
+  border: 1px solid #0b5e91;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #06233a, #02131f);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.62), 0 0 35px rgba(0, 112, 182, 0.12);
+  color: #f3f7ff;
+}
+
+.vuln-modal-title,
+.vuln-modal-title > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vuln-modal-title > div {
+  gap: 10px;
+}
+
+.vuln-modal-title span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  color: #ff4156;
+  background: rgba(120, 18, 38, 0.3);
+}
+
+.vuln-modal h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.vuln-modal-title > button {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  color: #abc0da;
+  background: transparent;
+  cursor: pointer;
+}
+
+.vuln-modal > p {
+  margin: 8px 0 20px 44px;
+  color: #9fb8d3;
+}
+
+.vuln-modal > label,
+.vuln-modal-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 14px;
+  color: #c8d9ec;
+  font-size: 10px;
+}
+
+.vuln-modal input,
+.vuln-modal select {
+  width: 100%;
+  height: 38px;
+  padding: 0 11px;
+  border: 1px solid #124665;
+  border-radius: 5px;
+  color: #f1f7ff;
+  background: #031725;
+}
+
+.vuln-modal select option {
+  background: #031725;
+  color: #f1f7ff;
+}
+
+.vuln-modal-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.vuln-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.vuln-modal-actions button {
+  height: 36px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #17435d;
+  border-radius: 5px;
+  background: #061b2a;
+  color: #f3f7ff;
+  cursor: pointer;
+}
+
+.vuln-modal-actions button.primary {
+  border-color: #0b98eb;
+  background: #078bdc;
+}
+
+.vuln-toast {
+  position: fixed;
+  z-index: 120;
+  right: 24px;
+  bottom: 24px;
+  height: 44px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #0b739d;
+  border-radius: 6px;
+  color: #e3f6ff;
+  background: #07314a;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
+.vuln-toast svg {
+  color: #21c5ff;
+}
+
+/* ============ Responsive ============ */
+
+@media (max-width: 1380px) {
+  .vuln-page .hero-motto {
+    display: none;
+  }
+
+  .vuln-page .intro-actions .ghost-action {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .vuln-page .detail-panel,
+  .vuln-page .risk-model-slot {
+    width: 270px;
+    right: 10px;
+  }
+
+  .vuln-page.with-detail .workspace {
+    margin-right: 282px;
+  }
+
+  .vuln-page .stat-card {
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .vuln-page .stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vuln-page .pipeline-head {
+    width: 140px;
+  }
+
+  .vuln-page .insights-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 1120px) {
+  .vuln-page .detail-panel,
+  .vuln-page .risk-model-slot,
+  .reopen-panel {
+    display: none;
+  }
+
+  .vuln-page.with-detail .workspace {
+    margin-right: 0;
+  }
+
+  .vuln-page .pipeline {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .vuln-page .pipeline-step {
+    min-width: 30%;
+    padding-bottom: 10px;
+  }
+}

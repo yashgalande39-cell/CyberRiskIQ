@@ -1,0 +1,14 @@
+import { amazonA, amazonPaths, infosysPath, microsoftPath, tataLetters, tataPaths } from './brandPaths';
+
+export type BrandName = 'tata' | 'infosys' | 'hdfc' | 'microsoft' | 'amazon' | 'digital-india' | 'adobe';
+
+export function BrandLogo({ name, colored = false }: { name: BrandName; colored?: boolean }) {
+  const className = `client-logo client-${name}${colored ? ' colored' : ''}`;
+  if (name === 'tata') return <svg className={className} viewBox="10 19 431 380" fill="currentColor" role="img" aria-label="Tata">{tataLetters.map((points, index) => <polygon key={index} points={points} />)}{tataPaths.map((path, index) => <path key={index} d={path} fillRule="evenodd" />)}</svg>;
+  if (name === 'infosys') return <svg className={className} viewBox="0 7.3 24 9.5" role="img" aria-label="Infosys"><path fill="currentColor" d={infosysPath} /></svg>;
+  if (name === 'hdfc') return <svg className={className} viewBox="0 0 235 44" role="img" aria-label="HDFC Bank"><path fill="currentColor" d="M0 1h42v42H0Zm8 8v26h26V9Z" fillRule="evenodd" /><path d="M21 0v11m0 21v12M0 22h11m21 0h11" stroke="currentColor" strokeWidth="6" /><rect x="15" y="16" width="12" height="12" fill="currentColor" /><rect x="47" y="3" width="186" height="38" fill={colored ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2" /><text x="53" y="31" fill={colored ? '#ffffff' : 'currentColor'} fontFamily="Arial, sans-serif" fontSize="27" fontWeight="900" letterSpacing="1">HDFC BANK</text></svg>;
+  if (name === 'microsoft') return <svg className={className} viewBox="0 0 337.6 72" fill="currentColor" role="img" aria-label="Microsoft"><path d={microsoftPath} /><path d="M0 0h34.2v34.2H0Zm37.8 0H72v34.2H37.8ZM0 37.8h34.2V72H0Zm37.8 0H72V72H37.8Z" /></svg>;
+  if (name === 'amazon') return <svg className={className} viewBox="0 0 603 182" fill="currentColor" role="img" aria-label="Amazon">{amazonPaths.map((path, index) => <path key={index} d={path} />)}<path d={amazonA} /><path d={amazonA} transform="translate(244.36719)" /></svg>;
+  if (name === 'digital-india') return <svg className={className} viewBox="0 0 218 73" role="img" aria-label="Digital India, Power to Empower"><path d="M24 8c33-20 58 18 17 53 18-28 26-48-17-53Zm-4 8c31-8 36 26 6 49 15-27 12-39-6-42Zm-3 16c18 0 8 37-8 37-9 0-3-24 8-37Z" fill="currentColor" /><text x="69" y="36" fill="currentColor" fontFamily="Georgia, serif" fontStyle="italic" fontSize="20">Digital India</text><text x="70" y="51" fill="currentColor" fontFamily="Arial, sans-serif" fontSize="9">Power To Empower</text></svg>;
+  return <svg className={className} viewBox="0 0 151 47" role="img" aria-label="Adobe"><path fill="currentColor" d="M0 2h17L0 44ZM25 2h17v42ZM21 17 32 44h-9l-3-8h-8Z" /><text x="55" y="32" fill="currentColor" fontFamily="Arial, sans-serif" fontSize="26" letterSpacing="-.5">Adobe</text></svg>;
+}
