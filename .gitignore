@@ -25,3 +25,9 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
